@@ -4,15 +4,34 @@
 
 namespace custom_conditions {
 
-    template<int Fst, int Snd, typename = void>
-    struct is_bigger_than : std::false_type {
-    };
+    // general_compare
+
+    template<int Fst, int Snd, typename Op, typename = void>
+    struct general_compare : std::false_type {};
+
+    template<int Fst, int Snd, typename Op>
+    struct general_compare<Fst, Snd, Op, typename std::enable_if_t<(Op()(Fst, Snd)), void>> : std::true_type {};
+
+    template<int Fst, int Snd, typename Op>
+    constexpr bool general_compare_v = general_compare<Fst, Snd, Op>::value;
+
+    // is_bigger_than
 
     template<int Fst, int Snd>
-    struct is_bigger_than<Fst, Snd, typename std::enable_if_t<(Fst > Snd), void>> : std::true_type {
-    };
+    constexpr bool is_bigger_than_v = general_compare_v<Fst, Snd, std::greater<>>;
 
     template<int Fst, int Snd>
-    constexpr bool is_bigger_than_v = is_bigger_than<Fst, Snd>::value;
+    constexpr bool is_bigger_equal_v = general_compare_v<Fst, Snd, std::greater_equal<>>;
 
+    template<int Fst, int Snd>
+    constexpr bool is_lower_than_v = general_compare_v<Fst, Snd, std::less<>>;
+
+    template<int Fst, int Snd>
+    constexpr bool is_lower_equal_v = general_compare_v<Fst, Snd, std::less_equal<>>;
+
+    template<int Fst, int Snd>
+    constexpr bool is_equal_to_v = general_compare_v<Fst, Snd, std::equal_to<>>;
+
+    template<int Fst, int Snd>
+    constexpr bool is_not_equal_to_v = general_compare_v<Fst, Snd, std::not_equal_to<>>;
 }

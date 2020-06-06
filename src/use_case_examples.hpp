@@ -1,6 +1,7 @@
 #include "template_conditions.hpp"
 
 // Factorial
+//template <int Number, bool = custom_conditions::general_compare_v<Number, 0, std::greater<>>>
 template <int Number, bool = custom_conditions::is_bigger_than_v<Number, 0>>
 struct Factorial {
     static constexpr long long value = 1;

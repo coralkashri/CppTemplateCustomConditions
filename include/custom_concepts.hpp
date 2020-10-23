@@ -1,3 +1,5 @@
+/* Created by Koral Kashri - Free to use, share, and extend. */
+
 #ifndef CPP_TEMPLATE_CUSTOM_CONDITIONS_CUSTOM_CONCEPTS_HPP
 #define CPP_TEMPLATE_CUSTOM_CONDITIONS_CUSTOM_CONCEPTS_HPP
 

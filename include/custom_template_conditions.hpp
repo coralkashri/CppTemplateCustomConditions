@@ -1,7 +1,7 @@
-/* Created by Korel Kashri - Free to use, share, and extend. */
+/* Created by Koral Kashri - Free to use, share, and extend. */
 
-#ifndef CPP_TEMPLATE_CUSTOM_CONDITIONS_TEMPLATE_CONDITIONS_HPP
-#define CPP_TEMPLATE_CUSTOM_CONDITIONS_TEMPLATE_CONDITIONS_HPP
+#ifndef CPP_TEMPLATE_CUSTOM_CONDITIONS_CUSTOM_TEMPLATE_CONDITIONS_HPP
+#define CPP_TEMPLATE_CUSTOM_CONDITIONS_CUSTOM_TEMPLATE_CONDITIONS_HPP
 
 #include <type_traits>
 

@@ -1,5 +1,8 @@
 /* Created by Korel Kashri - Free to use, share, and extend. */
 
+#ifndef CPP_TEMPLATE_CUSTOM_CONDITIONS_TEMPLATE_CONDITIONS_HPP
+#define CPP_TEMPLATE_CUSTOM_CONDITIONS_TEMPLATE_CONDITIONS_HPP
+
 #include <type_traits>
 
 namespace custom_conditions {
@@ -35,3 +38,5 @@ namespace custom_conditions {
     template<int Fst, int Snd>
     constexpr bool is_not_equal_to_v = general_compare_v<Fst, Snd, std::not_equal_to<>>;
 }
+
+#endif
